@@ -10,7 +10,7 @@ class UserAddress(BaseModel):
     country: str
     zip_code: str
 
-class Orders(BaseModel):
+class Order(BaseModel):
     timestamp: str
     items: List[Item]
     total_amount: float
