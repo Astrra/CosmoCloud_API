@@ -5,5 +5,5 @@ client=MongoClient("mongodb+srv://emailemailemail3439:57cj04K9gnnSKnfF@cluster0.
 
 db=client.sample_db
 
-items_collection = db["sample_collection"]
+items_collection = db["items_collection"]
 orders_collection = db["orders_collection"]

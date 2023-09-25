@@ -16,3 +16,7 @@ class Order(BaseModel):
     items: List[Item]
     total_amount: float
     user_address: UserAddress
+
+class PlaceOrder(BaseModel):
+    items: List[Item]
+    user_address: UserAddress
