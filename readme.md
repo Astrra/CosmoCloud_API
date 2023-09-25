@@ -48,6 +48,8 @@ Note: Make sure you have Python 3.10 or above installed on your system before ru
 
 ## Testing
 
+**Note- For testing purposes I have already added a MongoDB cluster string int the project files.**
+
 To test the project, follow these steps:
 
 1. Once the application is running locally, you can access the API documentation by visiting the url shown in the terminal or command prompt suffixed with /docs. For example, if the application is running on http://localhost:8000, you can access the API documentation at http://localhost:8000/docs.
@@ -55,6 +57,7 @@ To test the project, follow these steps:
 2. The API documentation provided by FastAPI will allow you to test and interact with the available endpoints.
 
 3. Use the provided endpoints to list products, create orders, fetch orders, update products, etc.
+   
 
 Note: Make sure you have FastAPI and Python 3.10 (or above) installed on your machine before running the project.
 
