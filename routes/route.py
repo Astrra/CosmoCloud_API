@@ -9,7 +9,7 @@ router = APIRouter()
 
 @router.get("/")
 def say_hello():
-    return {"message": "Hello World"}
+    return {"message": "CosmoCloud API is running"}
 
 @router.get("/items")
 async def get_items(limit: int = 10, offset: int = 0):
