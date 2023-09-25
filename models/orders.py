@@ -11,6 +11,7 @@ class UserAddress(BaseModel):
     zip_code: str
 
 class Order(BaseModel):
+    order_id: int
     timestamp: str
     items: List[Item]
     total_amount: float

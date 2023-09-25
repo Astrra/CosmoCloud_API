@@ -13,6 +13,7 @@ def multiple_item_serial(items) -> list:
 # orders
 def individual_order_serial(order) -> dict:
     return {
+        "order_id": order["order_id"],
         "timestamp": order["timestamp"],
         "items": multiple_unit_serial(order["items"]),
         "total_amount": order["total_amount"],
