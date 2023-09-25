@@ -5,3 +5,6 @@ class Item(BaseModel):
     name: str
     price: float
     quantity: int
+
+class Item_update(BaseModel):
+    quantity: int

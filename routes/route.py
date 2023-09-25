@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models.items import Item
+from models.items import Item, Item_update
 from models.orders import Order
 from config.database import items_collection, orders_collection
 from schema.schemas import individual_item_serial, multiple_item_serial, individual_order_serial, multiple_order_serial
@@ -23,6 +23,17 @@ def get_items(limit: int = 10, offset: int = 0):
 def get_item(item_id: int):
     item = items_collection.find_one({"item_id": item_id})
     return individual_item_serial(item)
+
+@router.put("/items/{item_id}")
+def update_item(item_id: int, item: Item_update):
+    item_to_be_updated = items_collection.find_one({"item_id": item_id})
+    if item_to_be_updated is None:
+        raise HTTPException(status_code=404, detail="No item found.")
+    new_values = { "$set": { "quantity": item.quantity } }
+    items_collection.update_one({"item_id": item_id}, new_values)
+    item_to_be_updated = items_collection.find_one({"item_id": item_id})
+    return individual_item_serial(item_to_be_updated)
+
 
 @router.get("/orders")
 def get_orders(limit: int = 10, offset: int = 0):
